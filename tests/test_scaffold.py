@@ -15,7 +15,10 @@ client = TestClient(app)
 def test_health_ok() -> None:
     response = client.get("/health")
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+    payload = response.json()
+    assert payload["status"] == "ok"
+    assert payload["embeddings_abstain_threshold"] == 0.35
+    assert payload["tfidf_abstain_threshold"] == 0.08
 
 
 def test_gold_set_has_at_least_30_questions() -> None:

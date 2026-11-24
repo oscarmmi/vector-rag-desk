@@ -1,4 +1,6 @@
 fastapi
 httpx
 pytest
+sentence-transformers
+sqlite-vec
 uvicorn

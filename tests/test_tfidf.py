@@ -42,7 +42,10 @@ def test_retrieve_endpoint_returns_tfidf_matches() -> None:
     assert ingest_response.status_code == 200
     assert ingest_response.json()["chunks"] >= 8
 
-    response = client.get("/retrieve", params={"q": "When may a driver pause a stop for severe weather?"})
+    response = client.get(
+        "/retrieve",
+        params={"q": "When may a driver pause a stop for severe weather?", "retriever": "tfidf"},
+    )
     assert response.status_code == 200
     payload = response.json()
     assert payload["retriever"] == "tfidf"
