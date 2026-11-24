@@ -6,9 +6,9 @@ The handbook is the same eight documents used in [cite-rag-desk](https://github.
 
 ## Status
 
-Slice 1 (this commit): app skeleton, corpus, 34-question gold set, `/health`.
-
-Later slices: TF-IDF baseline, embeddings index, answer + abstain, eval script that **writes** the metrics table below from `data/gold.json`. Do not type numbers into that table by hand.
+- Slice 1: app skeleton, corpus, 34-question gold set, `/health`.
+- Slice 2: overlapping 400-char chunks (40 overlap, same as cite-rag-desk) and a TF-IDF cosine retriever on `POST /ingest` + `GET /retrieve?q=`.
+- Later: embeddings index, answer + abstain, eval script that **writes** the metrics table below from `data/gold.json`. Do not type numbers into that table by hand.
 
 ## Run locally
 
@@ -22,6 +22,15 @@ uvicorn app.main:app --reload
 ```
 
 Open [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health) — it should return `{"status":"ok"}`.
+
+Chunk the handbook and search with the TF-IDF baseline:
+
+```bash
+curl -X POST http://127.0.0.1:8000/ingest
+curl "http://127.0.0.1:8000/retrieve?q=What+time+does+dispatch+review+the+order+queue"
+```
+
+`data/chunks.json` is the shared chunk list. Embeddings in the next slice will rank the same rows.
 
 ## Tests
 
