@@ -1,0 +1,3 @@
+# Failed delivery and retry procedure
+
+When a delivery fails, the driver selects the most accurate exception reason in the route app: no answer, unsafe access, address issue, or recipient declined. Add a short factual note and a photo only when it is safe and appropriate. Make one call or send one message using the approved contact flow, then move to the next stop rather than waiting in an unsafe location. Dispatch reviews failed stops before the route closes, checks whether a retry is feasible, and schedules the next attempt for the recipient's available window. Never mark a parcel delivered when it remains with the driver.

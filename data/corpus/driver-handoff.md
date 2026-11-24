@@ -1,0 +1,3 @@
+# Driver handoff at the depot
+
+At shift handoff, the outgoing driver and incoming driver count each undelivered parcel together and compare the count with the manifest. They review each open exception, customer contact already made, access instructions, and any promised follow-up. The receiving driver confirms custody in the route app before the outgoing driver signs out. A mismatch is escalated to the dispatch lead immediately and recorded with parcel identifiers; do not resolve a mismatch by editing the manifest without approval. Store handed-off parcels in the marked secure area until the receiving route is released.
